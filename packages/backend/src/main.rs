@@ -57,6 +57,8 @@ async fn handle_connection(client: &mut DiscordIpcClient, stream: tokio::net::Tc
                     _ => {}
                 }
             }
+
+            remove_discord_presence(client);
         }
         Err(e) => {
             println!("❌ Nepodařilo se navázat WebSocket: {}", e);
@@ -79,4 +81,8 @@ fn update_discord_presence(client: &mut DiscordIpcClient, info: YouTubeInfo) {
     if let Err(err) = client.set_activity(activity) {
         eprintln!("❌ Chyba při nastavování Discord aktivity: {}", err);
     }
+}
+
+fn remove_discord_presence(client: &mut DiscordIpcClient) {
+    client.clear_activity();
 }
