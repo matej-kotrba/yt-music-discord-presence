@@ -65,15 +65,16 @@ async fn handle_connection(client: &mut DiscordIpcClient, stream: tokio::net::Tc
 }
 
 fn update_discord_presence(client: &mut DiscordIpcClient, info: YouTubeInfo) {
-    let author_text = info.author;
+    let author_text = &info.author;
+    let large_text = format!("{}, {}", info.name, info.author);
 
     let activity = Activity::new()
         .details(&info.name)
-        .state(&author_text)
+        .state(author_text)
         .assets(
             Assets::new()
                 .large_image(&info.cover_url) // viz poznámka níže
-                .large_text("YouTube Music"),
+                .large_text(&large_text),
         );
 
     if let Err(err) = client.set_activity(activity) {
