@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body style="background-color: #222222; color: white">
+    <div id="app">
+      <div class="container" style="width: fit-content; white-space: nowrap">
+        <p id="check-backend">Backend for this extension found at 127.0.0.1:9001 <span id="check-backend-toggle"></span></p>
+        <p id="check-yt-instance">YT Music tab with song playing found <span id="check-yt-instance-toggle"></span></p>
+      </div>
+    </div>
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>

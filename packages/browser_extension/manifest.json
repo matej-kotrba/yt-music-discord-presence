@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Music Discord Presence",
+  "description": "Cool description",
+  "version": "1.0",
+  "permissions": ["tabs", "storage", "scripting"],
+  "host_permissions": ["https://music.youtube.com/"],
+  "background": {
+    "service_worker": "/dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*"],
+      "js": ["/dist/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "/dist/src/popup.html"
+  }
+}
