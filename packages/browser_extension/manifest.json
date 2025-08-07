@@ -15,6 +15,18 @@
     }
   ],
   "action": {
-    "default_popup": "/dist/src/popup.html"
+    "default_popup": "/dist/src/popup.html",
+    "default_icon": {
+      "16": "./public/icon.png",
+      "32": "./public/icon.png",
+      "48": "./public/icon.png",
+      "128": "./public/icon.png"
+    }
+  },
+  "icons": {
+    "16": "./public/icon.png",
+    "32": "./public/icon.png",
+    "48": "./public/icon.png",
+    "128": "./public/icon.png"
   }
 }
